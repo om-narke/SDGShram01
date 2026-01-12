@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Startup Project | VentureNexus</title>
+    <link rel="stylesheet" href="startup-portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body style="display: flex; justify-content: center; align-items: start; min-height: 100vh; padding: 4rem 0;">
+
+    <div class="glass-card" style="width: 90%; max-width: 800px; position: relative;">
+        <a href="startup-portal.html"
+            style="position: absolute; top: 20px; left: 20px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 5px;">
+            <span>←</span> Back
+        </a>
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Startup Submission Portal</h2>
+            <p style="color: var(--text-muted);">Step <span id="currentStepText">1</span> of 3: Core Ventures</p>
+        </div>
+
+        <div class="progress-bar">
+            <div id="formProgress" class="progress-fill" style="width: 33%;"></div>
+        </div>
+
+        <form id="startupForm">
+            <!-- Step 1: Basic Info -->
+            <div class="form-step active" id="step1">
+                <div class="input-group">
+                    <label>Startup Name</label>
+                    <input type="text" placeholder="e.g. EcoPulse Systems" required>
+                </div>
+                <div class="input-group">
+                    <label>Select Primary SDG Alignment</label>
+                    <select multiple style="height: 180px;">
+                        <option value="1">Goal 1: No Poverty</option>
+                        <option value="2">Goal 2: Zero Hunger</option>
+                        <option value="3">Goal 3: Good Health and Well-being</option>
+                        <option value="4">Goal 4: Quality Education</option>
+                        <option value="5">Goal 5: Gender Equality</option>
+                        <option value="6">Goal 6: Clean Water and Sanitation</option>
+                        <option value="7">Goal 7: Affordable and Clean Energy</option>
+                        <option value="8">Goal 8: Decent Work and Economic Growth</option>
+                        <option value="9">Goal 9: Industry, Innovation and Infrastructure</option>
+                        <option value="10">Goal 10: Reduced Inequality</option>
+                        <option value="11">Goal 11: Sustainable Cities and Communities</option>
+                        <option value="12">Goal 12: Responsible Consumption and Production</option>
+                        <option value="13">Goal 13: Climate Action</option>
+                        <option value="14">Goal 14: Life Below Water</option>
+                        <option value="15">Goal 15: Life on Land</option>
+                        <option value="16">Goal 16: Peace, Justice and Strong Institutions</option>
+                        <option value="17">Goal 17: Partnerships for the Goals</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Problem Statement & Market Gap</label>
+                    <textarea rows="4" placeholder="Describe the challenge you are solving..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label>Solution & Unique Value Proposition</label>
+                    <textarea rows="4" placeholder="What makes your solution different?"></textarea>
+                </div>
+            </div>
+
+            <!-- Step 2: Business & Impact -->
+            <div class="form-step" id="step2">
+                <div class="input-group">
+                    <label>Business Model & Revenue Strategy</label>
+                    <textarea rows="4" placeholder="How does your startup sustain itself?"></textarea>
+                </div>
+                <div class="input-group">
+                    <label>Current Stage</label>
+                    <select>
+                        <option>Idea / Research</option>
+                        <option>Prototype / PoC</option>
+                        <option>MVP</option>
+                        <option>Early Revenue</option>
+                        <option>Scale-up</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Target Market & Beneficiaries</label>
+                    <textarea rows="3" placeholder="Who is your primary customer/audience?"></textarea>
+                </div>
+                <div class="input-group">
+                    <label>Impact Metrics (Annual Target)</label>
+                    <input type="text" placeholder="e.g. 50,000 tons of CO2 offset">
+                </div>
+            </div>
+
+            <!-- Step 3: Funding & Support -->
+            <div class="form-step" id="step3">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="input-group">
+                        <label>Funding Required (USD)</label>
+                        <input type="number" placeholder="$ 500,000">
+                    </div>
+                    <div class="input-group">
+                        <label>Funding Round</label>
+                        <select>
+                            <option>Pre-Seed</option>
+                            <option>Seed</option>
+                            <option>Series A</option>
+                            <option>Bridge Round</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Investor Support Required (Multi-select)</label>
+                    <div
+                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; color: var(--text-muted); font-size: 0.9rem;">
+                        <label><input type="checkbox" style="width: auto;"> Mentorship</label>
+                        <label><input type="checkbox" style="width: auto;"> Market Access</label>
+                        <label><input type="checkbox" style="width: auto;"> Technical Support</label>
+                        <label><input type="checkbox" style="width: auto;"> Legal/Compliance</label>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Pitch Deck / Documents (PDF Only)</label>
+                    <input type="file" style="padding: 10px 0; border: none; background: transparent;">
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 3rem;">
+                <button type="button" id="prevBtn" class="btn-premium"
+                    style="background: transparent; border: 1px solid var(--accent-blue); display: none;">Previous</button>
+                <div style="flex-grow: 1;"></div>
+                <button type="button" id="nextBtn" class="btn-premium">Next Step</button>
+                <button type="submit" id="submitBtn" class="btn-premium" style="display: none;">Submit for
+                    Review</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const progressBar = document.getElementById('formProgress');
+        const stepText = document.getElementById('currentStepText');
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < totalSteps) {
+                document.getElementById(`step${currentStep}`).classList.remove('active');
+                currentStep++;
+                document.getElementById(`step${currentStep}`).classList.add('active');
+                updateUI();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                document.getElementById(`step${currentStep}`).classList.remove('active');
+                currentStep--;
+                document.getElementById(`step${currentStep}`).classList.add('active');
+                updateUI();
+            }
+        });
+
+        function updateUI() {
+            stepText.textContent = currentStep;
+            progressBar.style.width = `${(currentStep / totalSteps) * 100}%`;
+
+            prevBtn.style.display = currentStep === 1 ? 'none' : 'block';
+            nextBtn.style.display = currentStep === totalSteps ? 'none' : 'block';
+            submitBtn.style.display = currentStep === totalSteps ? 'block' : 'none';
+        }
+
+        document.getElementById('startupForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Capture data
+            const startupData = {
+                name: document.querySelector('input[placeholder="e.g. EcoPulse Systems"]').value,
+                problemStatement: document.querySelector('textarea[placeholder="Describe the challenge you are solving..."]').value,
+                stage: document.querySelector('select').value,
+                funding: document.querySelector('input[type="number"]').value,
+                sdg: document.querySelector('select[multiple]').value // Simplified for demo
+            };
+
+            // Save to localStorage
+            const existing = JSON.parse(localStorage.getItem('submittedStartups') || '[]');
+            existing.push(startupData);
+            localStorage.setItem('submittedStartups', JSON.stringify(existing));
+
+            alert('🚀 Startup submitted successfully! Redirecting to dashboard...');
+            window.location.href = 'startup-portal.html';
+        });
+    </script>
+</body>
+
+</html>

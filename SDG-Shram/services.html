@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | SDG-Shram</title>
+    <link rel="stylesheet" href="projects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #eee;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
+
+        .service-action {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background: #007bff;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .service-action:hover {
+            background: #0056b3;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            min-height: 120px;
+            font-family: inherit;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="feed-navbar">
+        <div class="logo-section">
+            <img src="logo/logo.png" alt="SDG-Shram">
+            <h2>SDG-Shram</h2>
+        </div>
+
+        <div class="nav-links">
+            <a href="feed.html">
+                <img src="logo/home.png" alt="Home">
+                <span>Home</span>
+            </a>
+            <a href="connect.html">
+                <img src="logo/connect.png" alt="Network">
+                <span>Connect</span>
+            </a>
+            <a href="projects.html">
+                <img src="logo/project.png" alt="Projects">
+                <span>Projects</span>
+            </a>
+            <a href="goals.html">
+                <img src="logo/goals.png" alt="Goals">
+                <span>SDG Goals</span>
+            </a>
+            <a href="services.html" class="active">
+                <img src="logo/services.png" alt="Services">
+                <span>Services</span>
+            </a>
+        </div>
+
+        <div class="user-section">
+            <div class="profile-menu" id="profileMenu" onclick="toggleDropdown()">
+                <div class="avatar-small" id="userAvatar">U</div>
+                <div class="menu-label">
+                    <span>Me</span>
+                    <span class="arrow">▼</span>
+                </div>
+
+                <div class="profile-dropdown" id="profileDropdown">
+                    <div class="dropdown-header">
+                        <div class="avatar-large" id="dropdownAvatar">U</div>
+                        <div class="info">
+                            <h4 id="dropdownName">User Name</h4>
+                            <p id="dropdownBio">SDG Advocate</p>
+                        </div>
+                    </div>
+                    <a href="profile.html" class="view-profile-btn">View profile</a>
+                    <div class="dropdown-section">
+                        <a href="#" class="sign-out" onclick="handleLogout(); return false;">Sign out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <section class="projects-hero" style="text-align: center;">
+            <h1>SDG-Shram Services</h1>
+            <p class="hero-subtitle">Professional support and tools to accelerate your SDG impact.</p>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>SDG Impact Assessment</h3>
+                    <p>Get a comprehensive analysis of your organization's contribution to various SDGs. We provide
+                        data-driven reports and improvement roadmaps.</p>
+                    <button class="service-action" onclick="openRequestModal('SDG Impact Assessment')">Request
+                        Assessment</button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>NGO Verification Support</h3>
+                    <p>Guidance through the 12A, 80G, and CSR-1 registration processes. Increase your NGO's credibility
+                        and fundraising potential.</p>
+                    <button class="service-action" onclick="openRequestModal('NGO Verification Support')">Get
+                        Support</button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>CSR Partnership Brokerage</h3>
+                    <p>We match businesses looking for CSR opportunities with verified, high-impact NGOs working on the
+                        ground.</p>
+                    <button class="service-action" onclick="openRequestModal('CSR Partnership Brokerage')">Find
+                        Partners</button>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Startup Mentorship</h3>
+                    <p>Connect with industry experts and impact investors to refine your SDG-aligned startup idea and
+                        business model.</p>
+                    <button class="service-action" onclick="openRequestModal('Startup Mentorship')">Find a
+                        Mentor</button>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">🏆</div>
+                    <h3>Innovation Challenges</h3>
+                    <p>Host targeted challenges for students and innovators to build solutions for specific SDG problems
+                        your organization faces.</p>
+                    <button class="service-action" onclick="openRequestModal('Innovation Challenge Hosting')">Host
+                        Challenge</button>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <h3>Volunteer Matching</h3>
+                    <p>Intelligent matching of skilled individuals with SDG projects that need their specific expertise
+                        for maximum impact.</p>
+                    <button class="service-action" onclick="openRequestModal('Volunteer Matching')">Request
+                        Volunteers</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Request Modal -->
+    <div class="modal" id="requestModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Request Service</h2>
+            </div>
+            <form id="serviceForm">
+                <input type="hidden" id="serviceType">
+                <div class="form-group">
+                    <label>Tell us more about your requirements:</label>
+                    <textarea id="requestMessage"
+                        placeholder="Describe what you need, your organization goals, and any specific timelines..."
+                        required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Contact Instructions (Optional):</label>
+                    <input type="text" id="contactInstructions"
+                        placeholder="e.g. Best time to call, specific email address..."
+                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Auth Check
+        (function () {
+            const token = localStorage.getItem('token');
+            const userStr = localStorage.getItem('user');
+            if (!token || !userStr) {
+                alert('Please login to access services.');
+                window.location.replace('dashboard.html');
+                return;
+            }
+            const user = JSON.parse(userStr);
+            const initial = (user.individual?.fullName || user.email).charAt(0).toUpperCase();
+            document.getElementById('userAvatar').textContent = initial;
+            document.getElementById('dropdownAvatar').textContent = initial;
+            document.getElementById('dropdownName').textContent = user.individual?.fullName || user.email;
+        })();
+
+        function toggleDropdown() {
+            document.getElementById('profileDropdown').classList.toggle('show');
+        }
+
+        function handleLogout() {
+            localStorage.clear();
+            window.location.replace('dashboard.html');
+        }
+
+        // Modal Logic
+        function openRequestModal(type) {
+            document.getElementById('modalTitle').textContent = `Request: ${type}`;
+            document.getElementById('serviceType').value = type;
+            document.getElementById('requestModal').classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('requestModal').classList.remove('show');
+        }
+
+        // Form Submission
+        document.getElementById('serviceForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            const requestData = {
+                requestType: document.getElementById('serviceType').value,
+                message: document.getElementById('requestMessage').value,
+                contactInstructions: document.getElementById('contactInstructions').value
+            };
+
+            const token = localStorage.getItem('token');
+            try {
+                const response = await fetch('/api/services/request', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(requestData)
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    alert('✅ Your request has been submitted successfully! Our team will contact you soon.');
+                    closeModal();
+                    document.getElementById('serviceForm').reset();
+                } else {
+                    alert('❌ Error: ' + result.error);
+                }
+            } catch (error) {
+                alert('❌ Failed to submit request. Please try again later.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Request';
+            }
+        });
+
+        // Close modal on click outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('requestModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+
+</html>

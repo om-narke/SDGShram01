@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Details | VentureNexus</title>
+    <link rel="stylesheet" href="startup-portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .detail-header {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .detail-logo {
+            font-size: 4rem;
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .section-title {
+            color: var(--accent-blue);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .content-block {
+            margin-bottom: 2.5rem;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), transparent);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="portal-nav">
+        <div class="logo-section">
+            <img src="logo/logo.png" alt="SDG-Shram" width="40">
+            <h2>SDG-Shram</h2>
+        </div>
+        <div class="nav-links">
+            <a href="startup-portal.html" style="color: var(--text-muted); text-decoration: none; margin-right: 20px;">←
+                Back to Dashboard</a>
+            <button class="btn-premium">Invest Now</button>
+        </div>
+    </nav>
+
+    <main style="padding: 4rem 10%;">
+        <div class="detail-header">
+            <div class="detail-logo">⚡</div>
+            <div>
+                <span class="sdg-badge sdg-7">SDG 7: Affordable & Clean Energy</span>
+                <h1 style="font-size: 3rem; margin: 0.5rem 0;">EcoPulse Systems</h1>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">Decentralized AI-grid solutions for emerging
+                    markets.</p>
+            </div>
+        </div>
+
+        <div class="info-grid">
+            <div class="main-info">
+                <div class="content-block">
+                    <span class="section-title">The Problem</span>
+                    <p>Millions in rural areas lack consistent access to electricity, relying on expensive and polluting
+                        diesel generators. Existing solar solutions are often inefficient due to poor load balancing and
+                        high storage costs.</p>
+                </div>
+
+                <div class="content-block">
+                    <span class="section-title">Our Solution</span>
+                    <p>EcoPulse provides smart micro-grid hardware integrated with an AI-driven management platform. Our
+                        systems predict demand spikes and optimize battery storage, reducing waste by 40% compared to
+                        traditional setups.</p>
+                </div>
+
+                <div class="content-block">
+                    <span class="section-title">Impact Metrics</span>
+                    <div class="impact-card">
+                        <div
+                            style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
+                            <div>
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-green);">12.5k
+                                </div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">CO2 Tons Offset</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-green);">50+</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">Villages Powered</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent-green);">98%</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">Uptime Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <span class="section-title">Investor Support Needed</span>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+                        <span class="tag"
+                            style="background: rgba(255,255,255,0.05); padding: 5px 15px; border-radius: 20px; border: 1px solid var(--glass-border);">Mentorship</span>
+                        <span class="tag"
+                            style="background: rgba(255,255,255,0.05); padding: 5px 15px; border-radius: 20px; border: 1px solid var(--glass-border);">Market
+                            Access</span>
+                        <span class="tag"
+                            style="background: rgba(255,255,255,0.05); padding: 5px 15px; border-radius: 20px; border: 1px solid var(--glass-border);">Scaling
+                            Strategy</span>
+                    </div>
+                </div>
+            </div>
+
+            <aside>
+                <div class="glass-card" style="position: sticky; top: 100px;">
+                    <h3>Investment Summary</h3>
+                    <div style="margin: 1.5rem 0;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="color: var(--text-muted);">Goal</span>
+                            <span>$450,000</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%;"></div>
+                        </div>
+                        <div style="text-align: right; font-size: 0.8rem; color: var(--accent-blue); margin-top: 5px;">
+                            65% Raised ($292,500)</div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <div class="metric-item"
+                            style="text-align: left; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px;">
+                            <div class="metric-label">Round</div>
+                            <div class="metric-value">Seed</div>
+                        </div>
+                        <div class="metric-item"
+                            style="text-align: left; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px;">
+                            <div class="metric-label">Min. Investment</div>
+                            <div class="metric-value">$10,000</div>
+                        </div>
+                    </div>
+
+                    <button class="btn-premium" style="width: 100%; margin-top: 2rem;">Express Interest</button>
+                    <button class="btn-premium"
+                        style="width: 100%; margin-top: 10px; background: transparent; border: 1px solid var(--glass-border);">Request
+                        Pitch Deck</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+</body>
+
+</html>

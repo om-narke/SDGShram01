@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VentureNexus | SDG Startup Portal</title>
+    <link rel="stylesheet" href="startup-portal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="portal-nav">
+        <div class="logo-section">
+            <img src="logo/logo.png" alt="SDG-Shram" width="40">
+            <h2>SDG-Shram</h2>
+        </div>
+        <div class="nav-links">
+            <a href="projects.html" style="color: var(--text-muted); text-decoration: none; margin-right: 20px;">← Back
+                to Projects</a>
+            <a href="upload-startup.html" class="btn-premium">Post Startup Project</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Invest in the Future</h1>
+        <p>The bridge between SDG-aligned innovation and world-class venture capital. Discover, support, and scale
+            startups changing the world.</p>
+    </header>
+
+    <div class="dashboard-grid">
+        <div class="main-content">
+            <div class="glass-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2>Featured Startups</h2>
+                    <div style="display: flex; gap: 10px;">
+                        <select style="width: auto; padding: 5px 15px;">
+                            <option>All SDGs</option>
+                            <option>Goal 7: Clean Energy</option>
+                            <option>Goal 13: Climate Action</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Dynamic Startups Container -->
+                <div id="dynamicStartupsContainer"></div>
+
+                <!-- Startup Card 1 -->
+                <div class="glass-card" style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.03);">
+                    <div class="startup-card">
+                        <div class="startup-logo">⚡</div>
+                        <div class="startup-info">
+                            <span class="sdg-badge sdg-7">SDG 7: Affordable & Clean Energy</span>
+                            <h3>EcoPulse Systems</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Revolutionizing decentralized solar
+                                grids for rural communities using AI-driven load balancing.</p>
+                        </div>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-item">
+                            <div class="metric-value">$450k</div>
+                            <div class="metric-label">Funding Goal</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">MVP</div>
+                            <div class="metric-label">Stage</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">12.5k</div>
+                            <div class="metric-label">Impact Score</div>
+                        </div>
+                    </div>
+                    <div class="investor-interest">
+                        <div class="interest-count">8 Investors Interested</div>
+                        <a href="startup-detail.html" class="btn-premium"
+                            style="padding: 8px 20px; font-size: 0.8rem; text-decoration: none;">View Detailed Pitch</a>
+                    </div>
+                </div>
+
+                <!-- Startup Card 2 -->
+                <div class="glass-card" style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.03);">
+                    <div class="startup-card">
+                        <div class="startup-logo">🌊</div>
+                        <div class="startup-info">
+                            <span class="sdg-badge sdg-13">SDG 13: Climate Action</span>
+                            <h3>AquaRescue AI</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">Satellite-linked monitoring systems
+                                for early detecting of ocean plastic blooms and cleanup coordination.</p>
+                        </div>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-item">
+                            <div class="metric-value">$1.2M</div>
+                            <div class="metric-label">Funding Goal</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">Seed</div>
+                            <div class="metric-label">Stage</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">45k</div>
+                            <div class="metric-label">Impact Score</div>
+                        </div>
+                    </div>
+                    <div class="investor-interest">
+                        <div class="interest-count">15 Investors Interested</div>
+                        <a href="startup-detail.html" class="btn-premium"
+                            style="padding: 8px 10px; font-size: 0.8rem; text-decoration: none;">View Detailed Pitch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <aside class="side-panel">
+            <div class="glass-card" style="margin-bottom: 2rem;">
+                <h3>Your Portal Stats</h3>
+                <div style="margin-top: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span style="color: var(--text-muted);">Profile Strength</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 15px;">
+                    <div class="metric-item"
+                        style="text-align: left; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px;">
+                        <div class="metric-label">Total Submissions</div>
+                        <div class="metric-value">2 Active</div>
+                    </div>
+                    <div class="metric-item"
+                        style="text-align: left; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px;">
+                        <div class="metric-label">Investor Views</div>
+                        <div class="metric-value">340</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <h3>Verification Status</h3>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;">Complete your NGO/Business
+                    profile to get the <b>Investor-Ready</b> badge.</p>
+                <button class="btn-premium"
+                    style="width: 100%; margin-top: 1.5rem; background: transparent; border: 1px solid var(--accent-blue); color: var(--accent-blue);">Complete
+                    Verification</button>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Check authentication
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.replace('login.html');
+        }
+
+        // Logic to display submitted startups
+        function displaySubmittedStartups() {
+            const container = document.getElementById('dynamicStartupsContainer');
+            const submittedStartups = JSON.parse(localStorage.getItem('submittedStartups') || '[]');
+
+            submittedStartups.forEach(startup => {
+                const card = document.createElement('div');
+                card.className = 'glass-card';
+                card.style.cssText = 'margin-bottom: 1.5rem; background: rgba(255,255,255,0.03);';
+
+                card.innerHTML = `
+                    <div class="startup-card">
+                        <div class="startup-logo">🚀</div>
+                        <div class="startup-info">
+                            <span class="sdg-badge sdg-7">SDG Alignment: ${startup.sdg || 'Multi-Goal'}</span>
+                            <h3>${startup.name}</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem;">${startup.problemStatement.substring(0, 100)}...</p>
+                        </div>
+                    </div>
+                    <div class="metrics-row">
+                        <div class="metric-item">
+                            <div class="metric-value">$${parseInt(startup.funding).toLocaleString()}</div>
+                            <div class="metric-label">Funding Goal</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">${startup.stage}</div>
+                            <div class="metric-label">Stage</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">New</div>
+                            <div class="metric-label">Status</div>
+                        </div>
+                    </div>
+                    <div class="investor-interest">
+                        <div class="interest-count">Awaiting Interest</div>
+                        <a href="startup-detail.html" class="btn-premium" style="padding: 8px 20px; font-size: 0.8rem; text-decoration: none;">View Detailed Pitch</a>
+                    </div>
+                `;
+                container.prepend(card);
+            });
+
+            // Update stats
+            if (submittedStartups.length > 0) {
+                const subValue = document.querySelectorAll('.metric-value')[3]; // Total Submissions index
+                if (subValue) subValue.textContent = `${2 + submittedStartups.length} Active`;
+            }
+        }
+
+        displaySubmittedStartups();
+    </script>
+</body>
+
+</html>
